@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Postulacion;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,6 @@ class PostulacionController extends Controller
      */
     public function create()
     {
-       
     }
 
     /**
@@ -28,20 +28,27 @@ class PostulacionController extends Controller
      */
     public function store(Request $request)
     {
-      
+
 
         $postulacion = new Postulacion();
-        $postulacion ->cargo=$request->get('cargo');
-        $postulacion ->documento=$request->get('documento');
-        $postulacion ->nrdocumento=$request->get('nrdocumento');
-        $postulacion ->correo=$request->get('correo');
-        $postulacion ->medio=$request->get('medio');
-        $postulacion ->departamento=$request->get('departamento');
-        $postulacion ->provincia=$request->get('provincia');
-        $postulacion ->distrito=$request->get('distrito');
-          $postulacion ->save();
-      return response()->json($postulacion,200);
+        $postulacion->cargo = $request->get('cargo');
+        $postulacion->documento = $request->get('documento');
+        $postulacion->nrdocumento = $request->get('nrdocumento');
+        $postulacion->correo = $request->get('correo');
+        $postulacion->medio = $request->get('medio');
+        $postulacion->departamento = $request->get('departamento');
+        $postulacion->provincia = $request->get('provincia');
+        $postulacion->distrito = $request->get('distrito');
+        $postulacion->apaterno = $request->get('apaterno');
+        $postulacion->amaterno = $request->get('amaterno');
+        $postulacion->nombres = $request->get('nombres');
+        $postulacion->fechanac = $request->get('fechanac');
+        $postulacion->paisnac = $request->get('paisnac');
+        $postulacion->telefono = $request->get('telefono');
+        $postulacion->aspsalarios = $request->get('aspsalarios');
 
+        $postulacion->save();
+        return response()->json($postulacion, 200);
     }
 
     /**

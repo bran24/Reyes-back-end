@@ -21,6 +21,13 @@ return new class extends Migration
             $table->string('departamento');
             $table->string('provincia');
             $table->string('distrito');
+            $table->string('apaterno');
+            $table->string('amaterno');
+            $table->string('nombres');
+            $table->string('fechanac');
+            $table->string('paisnac');
+            $table->string('telefono');
+            $table->string('aspsalarios');
             $table->timestamps();
         });
     }
