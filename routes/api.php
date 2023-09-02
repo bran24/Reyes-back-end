@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostulacionController;
+use App\Http\Controllers\FilesController;
+/*
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +22,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(PostulacionController::class)->group(function () {
     Route::post('/postulacion', 'store');
     Route::get('/postulacion', 'index');
+
+    
+ 
+});
+
+Route::controller(FilesController::class)->group(function () {
+    Route::post('/archivocv', 'storeFile');
+    Route::get('/archivocv', ' downloadFile');
 
     
  

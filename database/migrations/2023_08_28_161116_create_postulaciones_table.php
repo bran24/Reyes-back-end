@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('paisnac');
             $table->string('telefono');
             $table->string('aspsalarios');
+            $table->string('archivocv');
             $table->timestamps();
         });
     }

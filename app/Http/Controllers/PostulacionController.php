@@ -46,7 +46,7 @@ class PostulacionController extends Controller
         $postulacion->paisnac = $request->get('paisnac');
         $postulacion->telefono = $request->get('telefono');
         $postulacion->aspsalarios = $request->get('aspsalarios');
-
+        $postulacion->archivocv = $request->get('archivocv');
         $postulacion->save();
         return response()->json($postulacion, 200);
     }
