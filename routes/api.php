@@ -22,15 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(PostulacionController::class)->group(function () {
     Route::post('/postulacion', 'store');
     Route::get('/postulacion', 'index');
-
-    
- 
 });
 
 Route::controller(FilesController::class)->group(function () {
     Route::post('/archivocv', 'storeFile');
-    Route::get('/archivocv', ' downloadFile');
-
-    
- 
+    Route::get('/archivocv/{name}', 'downloadFile');
 });
