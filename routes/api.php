@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostulacionController;
 use App\Http\Controllers\FilesController;
+use Illuminate\Support\Facades\Artisan;
+
 /*
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +29,9 @@ Route::controller(PostulacionController::class)->group(function () {
 Route::controller(FilesController::class)->group(function () {
     Route::post('/archivocv', 'storeFile');
     Route::get('/archivocv/{name}', 'downloadFile');
+});
+
+
+Route::get('storage-link', function () {
+    Artisan::call('storage:link');
 });
